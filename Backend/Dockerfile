@@ -2,7 +2,7 @@
 FROM node:20-alpine AS builder
 
 # Establece el directorio de trabajo en el contenedor
-WORKDIR /Backend/src/app
+WORKDIR /src/app
 
 # Copia el archivo package.json y package-lock.json (si existe)
 COPY package*.json package.json package-lock.json ./
