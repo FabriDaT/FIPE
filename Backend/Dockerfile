@@ -1,14 +1,11 @@
 # Usa una imagen base de Node.js
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 # Establece el directorio de trabajo en el contenedor
-WORKDIR /src/app
-
-# Copia el archivo package.json y package-lock.json (si existe)
-COPY package*.json package.json package-lock.json ./
+WORKDIR /usr/src/app
 
 # Copia solo los archivos de configuración primero para aprovechar la cache
-COPY package.json package-lock.json ./
+COPY src/package*.json ./
 
 # Instala las dependencias
 RUN npm install
@@ -16,6 +13,7 @@ RUN npm install
 # Copia el resto de los archivos de tu proyecto
 COPY . .
 
+# Construye la aplicación (si es necesario)
 RUN npm run build
 
 # Expon el puerto en el que corre tu app

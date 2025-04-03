@@ -6,6 +6,9 @@ export const {
   MONGO_URI = '',
   JWT_SECRET = 'SecretToken',
   API_KEY = '',
-  NODE_ENV,
+  NODE_ENV = 'development', 
   URL_FRONT,
-} = process.env
+} = process.env;
+
+
+export const HOST = NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
