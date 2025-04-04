@@ -2,10 +2,10 @@
 FROM node:20-alpine
 
 # Establece el directorio de trabajo en el contenedor
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copia solo los archivos de configuración primero para aprovechar la cache
-COPY src/package*.json ./
+COPY package*.json ./
 
 # Instala las dependencias
 RUN npm install
