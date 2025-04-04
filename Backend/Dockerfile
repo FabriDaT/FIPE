@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Establece el directorio de trabajo en el contenedor
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copia solo los archivos de configuración primero para aprovechar la cache
 COPY package*.json ./
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expon el puerto en el que corre tu app
-EXPOSE 3000
+EXPOSE 3001
 
 # Comando para ejecutar el servidor
-CMD ["npm", "run", "debug"]
+CMD ["npm", "start"]

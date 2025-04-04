@@ -14,7 +14,7 @@ services:
       - mongo
     environment:
       - MONGO_URI=${MONGO_URI}
-      - NODE_ENV=development
+      - NODE_ENV=production
       - API_KEY_RESEND=${API_KEY_RESEND}
       - JWT_SECRET=${JWT_SECRET}
   mongo:

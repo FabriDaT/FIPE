@@ -8,5 +8,5 @@ connectDB();
 
 app.listen(port, HOST, () => {
   console.log(`Servidor escuchando en http://${HOST}:${port}`);
-  console.log(`Entorno: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Entorno: ${process.env.NODE_ENV || 'production'}`);
 });
